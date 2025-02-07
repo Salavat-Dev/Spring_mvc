@@ -14,8 +14,16 @@ import java.util.stream.Collectors;
 @Controller
 public class CarController {
 
-    @Autowired
+
     private CarService carService;
+
+    public CarService getCarService() {
+        return carService;
+    }
+    @Autowired
+    public void setCarService(CarService carService) {
+        this.carService = carService;
+    }
 
     @GetMapping("/cars")
     private String showCars(@RequestParam(name = "count", required = false, defaultValue = "5") Integer count, Model model) {
