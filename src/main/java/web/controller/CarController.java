@@ -14,14 +14,10 @@ import java.util.stream.Collectors;
 @Controller
 public class CarController {
 
-
     private CarService carService;
 
-    public CarService getCarService() {
-        return carService;
-    }
     @Autowired
-    public void setCarService(CarService carService) {
+    public CarController(CarService carService) {
         this.carService = carService;
     }
 
